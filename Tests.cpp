@@ -1,7 +1,7 @@
 #include "Rmqlib.h"
 #include <iostream>
 #include <fstream>
-using namespace std; 
+using namespace std;
 
 int main()
 {
@@ -20,14 +20,18 @@ int main()
 	Tree = creatermq(0, n - 1, a);
 	input.close();
 
-	ofstream test1("test1.txt", ios_base::trunc);  //test1. Modify the part of interval and check with the .txt
+	auto arr = new int[n];
+	ofstream test1("test1.txt", ios_base::out);  //test1. Modify the part of interval and check with the .txt
 	if (!test1.is_open()) cout << "cannot open the file";
 	else {
 		int R, L, X;
 		R = 1; L = 3; X = 100;
 		modify(Tree, 1, 3, 100);
-		toMassive (Tree, 0, n-1, a); 
-		for (int i = 0; n - 1; i++) test1 << a[i] << " ";
+		toMassive (Tree, 0, n-1, arr);
+		for (int i = 0; i < n; i++)
+		{
+			test1 << arr[i] << " ";
+		}
 
 	}test1.close();
 
@@ -36,10 +40,10 @@ int main()
 	else {
 		int Ri, Le, X;
 		Ri = 0; Le = 5; X = 30;
-	    modify (Tree, 0, 5, 30);
+		modify(Tree, 0, 5, 30);
 		for (int i = 0; i < n; i++)
 		{
-			
+
 		}
 
 	}test2.close();
@@ -87,6 +91,6 @@ int main()
 	}test6.close();
 
 	delete[]a;
-	delete[]Tree; 
+	delete[]Tree;
 
 }
