@@ -16,7 +16,4 @@ if ERRORLEVEL 1 (echo ERROR4) else (echo OK4)
 fc test5.txt test5check.txt > nul
 if ERRORLEVEL 1 (echo ERROR5) else (echo OK5)
 
-fc test6.txt test6check.txt > nul
-if ERRORLEVEL 1 (echo ERROR6) else (echo OK6)
-
 pause
