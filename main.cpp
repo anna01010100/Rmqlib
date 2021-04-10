@@ -100,9 +100,14 @@ int main()
     }
     RmqTree tree5(arr5, n5);
     tree5.modify(l5, r5, val5); 
+    for (i = 0; i < n5; i++)
+    {
+        arr5[i] = tree5.getElement(i);
+    }
+    RmqTree tree6(arr5, n5); 
     int rez2; 
-    rez2 = tree5.findmax(l5, r5);
-    tree5.show();
+    rez2 = tree6.findmax(l5, r5);
+    tree6.show();
     cout << endl; 
     ofstream fout5;
     fout5.open("test5.txt");
